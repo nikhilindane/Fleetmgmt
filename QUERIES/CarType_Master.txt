@@ -1,0 +1,10 @@
+CREATE TABLE [dbo].[CarType_Master] (
+    [Cartype_Id]   INT            IDENTITY (1, 1) NOT NULL,
+    [Cartype_Name] NVARCHAR (MAX) NOT NULL,
+    [Daily_Rate]   MONEY          NOT NULL,
+    [Weekly_Rate]  MONEY          NOT NULL,
+    [Monthly_Rate] MONEY          NOT NULL,
+    [Image]        IMAGE          NOT NULL,
+    CONSTRAINT [PK_CarType Master] PRIMARY KEY CLUSTERED ([Cartype_Id] ASC)
+);
+

@@ -1,0 +1,11 @@
+CREATE TABLE [dbo].[Hub_Master] (
+    [Hub_id]      INT            IDENTITY (1, 1) NOT NULL,
+    [Hub_Name]    NVARCHAR (MAX) NOT NULL,
+    [Hub_Address] NVARCHAR (MAX) NOT NULL,
+    [City_Id]     INT            NOT NULL,
+    [State_Id]    INT            NOT NULL,
+    CONSTRAINT [PK_HUB_MASTER] PRIMARY KEY CLUSTERED ([Hub_id] ASC),
+    CONSTRAINT [FK_Hub_Master_City_Master] FOREIGN KEY ([City_Id]) REFERENCES [dbo].[City_Master] ([City_Id]),
+    CONSTRAINT [FK_Hub_Master_State_Master] FOREIGN KEY ([State_Id]) REFERENCES [dbo].[State_Master] ([State_id])
+);
+

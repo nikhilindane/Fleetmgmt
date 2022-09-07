@@ -1,0 +1,7 @@
+CREATE TABLE [dbo].[City_Master] (
+    [City_Id]   INT            IDENTITY (1, 1) NOT NULL,
+    [City_Name] NVARCHAR (MAX) NOT NULL,
+    [State_Id]  INT            NULL,
+    CONSTRAINT [PK_City_Master] PRIMARY KEY CLUSTERED ([City_Id] ASC),
+    CONSTRAINT [FK_City_Master_State_Master1] FOREIGN KEY ([State_Id]) REFERENCES [dbo].[State_Master] ([State_id])
+);

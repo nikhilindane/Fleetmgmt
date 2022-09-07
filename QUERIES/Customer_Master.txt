@@ -1,0 +1,20 @@
+CREATE TABLE [dbo].[Customer_Master] (
+    [Customer_Id]        INT            IDENTITY (1, 1) NOT NULL,
+    [Password]           NVARCHAR (50)  NOT NULL,
+    [First_Name]         NVARCHAR (50)  NOT NULL,
+    [Middle_Name]        NVARCHAR (50)  NULL,
+    [Last_Name]          NVARCHAR (50)  NOT NULL,
+    [Current_Address]    NVARCHAR (MAX) NOT NULL,
+    [Permanant_Address]  NVARCHAR (MAX) NOT NULL,
+    [Email_Id]           NVARCHAR (50)  NOT NULL,
+    [City]               NVARCHAR (50)  NOT NULL,
+    [Zipcode]            NUMERIC (18)   NULL,
+    [Mobile_Number]      INT            NOT NULL,
+    [Phone_Number]       INT            NULL,
+    [Driving_License]    NVARCHAR (50)  NOT NULL,
+    [Issued_By]          NVARCHAR (50)  NOT NULL,
+    [License_Valid_Date] DATETIME       NOT NULL,
+    [DOB]                DATETIME       NOT NULL,
+    CONSTRAINT [PK_Customer_Master] PRIMARY KEY CLUSTERED ([Customer_Id] ASC)
+);
+

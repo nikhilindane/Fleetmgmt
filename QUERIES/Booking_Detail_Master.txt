@@ -1,0 +1,10 @@
+CREATE TABLE [dbo].[Booking_Details] (
+    [Booking_Detail_Id] INT IDENTITY (1, 1) NOT NULL,
+    [Booking_Id]        INT NOT NULL,
+    [Addon_Id]          INT NOT NULL,
+    [Addon_Rate]        INT NOT NULL,
+    CONSTRAINT [PK_Booking_Details] PRIMARY KEY CLUSTERED ([Booking_Detail_Id] ASC),
+    CONSTRAINT [FK_Booking_Details_AddOn_Master] FOREIGN KEY ([Addon_Id]) REFERENCES [dbo].[AddOn_Master] ([Addon_id]),
+    CONSTRAINT [FK_Booking_Details_Booking_Header] FOREIGN KEY ([Booking_Id]) REFERENCES [dbo].[Booking_Header] ([Booking_Id])
+);
+

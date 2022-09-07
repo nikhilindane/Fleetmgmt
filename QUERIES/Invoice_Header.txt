@@ -1,0 +1,18 @@
+CREATE TABLE [dbo].[Invoice_Header] (
+    [Invoice_Id]       INT        IDENTITY (1, 1) NOT NULL,
+    [Date]             DATE       NOT NULL,
+    [Booking_Id]       INT        NOT NULL,
+    [Customer_Id]      INT        NOT NULL,
+    [Start_Date]       DATE       NOT NULL,
+    [Car_Id]           INT        NOT NULL,
+    [End_Date]         DATE       NOT NULL,
+    [Rental_Amt]       INT        NOT NULL,
+    [Total_AddOn_Amt]  INT        NOT NULL,
+    [Total_Amt]        INT        NOT NULL,
+    [Customer_Details] NCHAR (10) NULL,
+    CONSTRAINT [PK_Invoice_Header] PRIMARY KEY CLUSTERED ([Invoice_Id] ASC),
+    CONSTRAINT [FK_Invoice_Header_Customer_Master] FOREIGN KEY ([Customer_Id]) REFERENCES [dbo].[Customer_Master] ([Customer_Id]),
+    CONSTRAINT [FK_Invoice_Header_Booking_Header] FOREIGN KEY ([Booking_Id]) REFERENCES [dbo].[Booking_Header] ([Booking_Id]),
+    CONSTRAINT [FK_Invoice_Header_Car_Master] FOREIGN KEY ([Car_Id]) REFERENCES [dbo].[Car_Master] ([Car_Id])
+);
+

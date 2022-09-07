@@ -1,0 +1,11 @@
+CREATE TABLE [dbo].[Car_Master] (
+    [Car_Id]               INT          IDENTITY (1, 1) NOT NULL,
+    [Cartype_Id]           INT          NOT NULL,
+    [Car_Detail]           VARCHAR (50) NOT NULL,
+    [Hub_Id]               INT          NOT NULL,
+    [Is_Avail]             BIT          NOT NULL,
+    [Maintanance_Due_Date] DATE         NOT NULL,
+    CONSTRAINT [PK_Table_1] PRIMARY KEY CLUSTERED ([Car_Id] ASC),
+    CONSTRAINT [FK_Car_Master_Hub_Master] FOREIGN KEY ([Hub_Id]) REFERENCES [dbo].[Hub_Master] ([Hub_id]),
+    CONSTRAINT [FK_Car_Master_CarType_Master] FOREIGN KEY ([Cartype_Id]) REFERENCES [dbo].[CarType_Master] ([Cartype_Id])
+);

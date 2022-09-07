@@ -1,0 +1,7 @@
+CREATE TABLE [dbo].[AddOn_Master] (
+    [Addon_id]         INT          IDENTITY (1, 1) NOT NULL,
+    [Addon_Name]       VARCHAR (50) NOT NULL,
+    [Addon_Daily_Rate] INT          NOT NULL,
+    [Rate_Valid_Upto]  DATE         NOT NULL,
+    CONSTRAINT [PK_AddOn_Master] PRIMARY KEY CLUSTERED ([Addon_id] ASC)
+);

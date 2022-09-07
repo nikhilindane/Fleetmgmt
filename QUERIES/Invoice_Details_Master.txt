@@ -1,0 +1,10 @@
+CREATE TABLE [dbo].[Invoice_Detail] (
+    [Invoice_Detail_id] INT IDENTITY (1, 1) NOT NULL,
+    [Invoice_id]        INT NOT NULL,
+    [Addon_id]          INT NOT NULL,
+    [Addon_Amount]      INT NULL,
+    CONSTRAINT [PK_Invoice_Detail] PRIMARY KEY CLUSTERED ([Invoice_Detail_id] ASC),
+    CONSTRAINT [FK_Invoice_Detail_Invoice_Header] FOREIGN KEY ([Invoice_id]) REFERENCES [dbo].[Invoice_Header] ([Invoice_Id]),
+    CONSTRAINT [FK_Invoice_Detail_AddOn_Master] FOREIGN KEY ([Addon_id]) REFERENCES [dbo].[AddOn_Master] ([Addon_id])
+);
+

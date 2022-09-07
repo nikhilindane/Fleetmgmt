@@ -1,0 +1,30 @@
+CREATE TABLE [dbo].[Airport_Master] (
+    [Airport_Id]   INT           IDENTITY (1, 1) NOT NULL,
+    [Airport_Name] NVARCHAR (50) NOT NULL,
+    [City_Id]      INT           NOT NULL,
+    [State_Id]     INT           NOT NULL,
+    [Hub_Id]       INT           NOT NULL,
+    [Airport_Code] INT           NOT NULL,
+    PRIMARY KEY CLUSTERED ([Airport_Id] ASC),
+    CONSTRAINT [FK_Airport_Master_Hub_Master] FOREIGN KEY ([Hub_Id]) REFERENCES [dbo].[Hub_Master] ([Hub_id]),
+    CONSTRAINT [FK_Airport_Master_State_Master] FOREIGN KEY ([State_Id]) REFERENCES [dbo].[State_Master] ([State_id]),
+    CONSTRAINT [FK_Airport_Master_City_Master] FOREIGN KEY ([City_Id]) REFERENCES [dbo].[City_Master] ([City_Id])
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+CREATE TABLE [dbo].[Booking_Header] (
+    [Booking_Id]       INT            IDENTITY (1, 1) NOT NULL,
+    [Date]             DATE           NOT NULL,
+    [Customer_Id]      INT            NOT NULL,
+    [Start _Date]      DATE           NOT NULL,
+    [End_Date]         DATE           NOT NULL,
+    [Cartype_Id]       INT            NOT NULL,
+    [Customer_Details] NVARCHAR (MAX) NULL,
+    CONSTRAINT [PK_Booking_Header] PRIMARY KEY CLUSTERED ([Booking_Id] ASC),
+    CONSTRAINT [FK_Booking_Header_Customer_Master] FOREIGN KEY ([Customer_Id]) REFERENCES [dbo].[Customer_Master] ([Customer_Id]),
+    CONSTRAINT [FK_Booking_Header_CarType_Master] FOREIGN KEY ([Cartype_Id]) REFERENCES [dbo].[CarType_Master] ([Cartype_Id])
+);
+
